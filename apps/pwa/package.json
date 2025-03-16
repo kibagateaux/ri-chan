@@ -1,0 +1,8 @@
+{
+  "name": "@subete/pwa",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "pwa"
+  }
+}
