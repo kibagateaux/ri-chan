@@ -1,10 +1,36 @@
-# Subete
-
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
-
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+# Ryokou-san
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/expo?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+
+## Mono Repo Overview
+```
+api
+|––
+|––
+|––
+pwa
+├── api
+│   ├── auth.ts         # API calls for auth endpoints
+│   └── client.ts       # Axios instance configuration
+├── app
+│   ├── index.tsx       # Main app entry point with routing
+│   ├── login.tsx       # Login screen
+│   └── recover.tsx     # Recovery screen
+├── components
+│   ├── AuthForm.tsx    # Reusable auth form component
+│   └── ui
+│       ├── Button.tsx  # Reusable button component
+│       ├── Input.tsx   # Reusable input component
+│       └── Alert.tsx   # Reusable alert component
+├── lib
+│   ├── auth.ts         # Auth context and hooks
+│   ├── utils.ts        # General utility functions
+│   └── hooks.ts        # Custom hooks
+├── types
+│   ├── auth.ts         # Auth-related TypeScript interfaces
+└── translations
+    └── en.json         # English translations (i18n support)
+```
 
 ## Finish your CI setup
 

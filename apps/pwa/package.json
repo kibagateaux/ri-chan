@@ -2,7 +2,24 @@
   "name": "@subete/pwa",
   "version": "0.0.1",
   "private": true,
+  "main": "expo-router/entry",
+
   "nx": {
     "name": "pwa"
+  },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "listUnknownPackages": false,
+        "exclude": [
+          "react-native-restart"
+        ]
+      }
+    },
+    "install": {
+      "exclude": [
+        "eslint-config-expo"
+      ]
+    }
   }
 }

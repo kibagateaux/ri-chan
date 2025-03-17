@@ -1,7 +1,35 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "docs",
+    "cli",
+    "android",
+    "ios",
+    "lint-staged.config.js"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "nativewind-env.d.ts"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@env": [
+        "./src/lib/env.js"
+      ]
+    },
+    "types": ["nativewind/types"]
+  },
   "references": [
     {
       "path": "./tsconfig.app.json"

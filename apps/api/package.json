@@ -1,0 +1,46 @@
+{
+  "name": "@subete/api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist/db/migrations && tsc && cp -r src/db/migrations dist/db",
+    "start": "nodemon"
+  },
+  "nx": {
+    "targets": {
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@subete/api:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@subete/api:build:development"
+          },
+          "production": {
+            "buildTarget": "@subete/api:build:production"
+          }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.1",
+    "@types/jsonwebtoken": "^9.0.9"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "uuid": "^11.1.0"
+  }
+}
